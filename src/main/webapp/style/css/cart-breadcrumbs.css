@@ -1,0 +1,125 @@
+/* steps */
+#checkoutBreadcrumb li:first-child, #checkoutBreadcrumb li:first-child, #checkoutBreadcrumb li:first-child, body#pgExpressPayment #checkoutBreadcrumb li:first-child, body#pgConfirmation #checkoutBreadcrumb li:first-child {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#checkoutBreadcrumb li.basketactive, #checkoutBreadcrumb li.detailsactive, #checkoutBreadcrumb li.deliveryactive, #checkoutBreadcrumb li.paymentactive, #checkoutBreadcrumb li.reviewactive, #checkoutBreadcrumb li.doneactive, #checkoutBreadcrumb li.basketactive, #checkoutBreadcrumb li.detailsactive, #checkoutBreadcrumb li.deliveryactive, #checkoutBreadcrumb li.paymentactive, #checkoutBreadcrumb li.reviewactive, #checkoutBreadcrumb li.doneactive, body#pgPayment #checkoutBreadcrumb li.basketactive, body#pgPayment #checkoutBreadcrumb li.detailsactive, body#pgPayment #checkoutBreadcrumb li.deliveryactive, body#pgPayment #checkoutBreadcrumb li.paymentactive, body#pgPayment #checkoutBreadcrumb li.reviewactive, body#pgPayment #checkoutBreadcrumb li.doneactive, #checkoutBreadcrumb li.basketactive, #checkoutBreadcrumb li.detailsactive, #checkoutBreadcrumb li.deliveryactive, #checkoutBreadcrumb li.paymentactive, #checkoutBreadcrumb li.reviewactive, #checkoutBreadcrumb li.doneactive, body#pgExpressPayment #checkoutBreadcrumb li.basketactive, body#pgExpressPayment #checkoutBreadcrumb li.detailsactive, body#pgExpressPayment #checkoutBreadcrumb li.deliveryactive, body#pgExpressPayment #checkoutBreadcrumb li.paymentactive, body#pgExpressPayment #checkoutBreadcrumb li.reviewactive, body#pgExpressPayment #checkoutBreadcrumb li.doneactive, body#pgConfirmation #checkoutBreadcrumb li.basketactive, body#pgConfirmation #checkoutBreadcrumb li.detailsactive, body#pgConfirmation #checkoutBreadcrumb li.deliveryactive, body#pgConfirmation #checkoutBreadcrumb li.paymentactive, body#pgConfirmation #checkoutBreadcrumb li.reviewactive, body#pgConfirmation #checkoutBreadcrumb li.doneactive {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#checkoutBreadcrumb li:last-child, #checkoutBreadcrumb li:last-child, #checkoutBreadcrumb li:last-child, body#pgPayment #checkoutBreadcrumb li:last-child, #checkoutBreadcrumb li:last-child, body#pgExpressPayment #checkoutBreadcrumb li:last-child, body#pgConfirmation #checkoutBreadcrumb li:last-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#checkoutBreadcrumb {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+li.done {
+    -webkit-border-radius: 0 10px 10px 0;
+    -moz-border-radius: 0 10px 10px 0;
+    border-radius: 0 10px 10px 0;
+}
+
+#primary #checkoutBreadcrumb {
+    width: 745px;
+}
+
+#checkoutBreadcrumb {
+    width: 100%;
+    margin: 0 auto 30px;
+    padding-left: 5%;
+}
+
+#checkoutBreadcrumb li {
+    float: left;
+    height: 25px;
+    width: 265px;
+    width: -webkit-calc(21% - 30px);
+    width: -moz-calc(21% - 30px);
+    width: calc(21% - 30px);
+    list-style-type: none;
+    background: #dfecf2 url("../images/breadcrumb_basket_divider.gif") right top no-repeat;
+    font-weight: bold;
+    color: #2993c1;
+    font-size: 1em;
+    padding: 7px 35px 0 6px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#checkoutBreadcrumb.express li {
+    width: 434px;
+    width: -webkit-calc(50% - 41px);
+    width: -moz-calc(50% - 41px);
+    width: calc(50% - 41px);
+}
+
+#checkoutBreadcrumb li:first-child {
+    -webkit-border-top-left-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-bottomleft: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#checkoutBreadcrumb li a {
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+    color: #2993C1;
+}
+
+.doneactive {
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#checkoutBreadcrumb li.basketactive, #checkoutBreadcrumb li.detailsactive, #checkoutBreadcrumb li.deliveryactive, #checkoutBreadcrumb li.paymentactive, #checkoutBreadcrumb li.reviewactive, #checkoutBreadcrumb li.doneactive {
+    background-color: #2993c1;
+    background-position: right -100px;
+}
+
+#checkoutBreadcrumb li:last-child {
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 10px;
+    -moz-border-radius-topright: 10px;
+    -moz-border-radius-bottomright: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#checkoutBreadcrumb li.done, #checkoutBreadcrumb li.doneactive {
+    background-image: none;
+}
+
+#checkoutBreadcrumb li.nextactive {
+    background-color: #dfecf2;
+    background-position: right bottom;
+}
+
+#checkoutBreadcrumb li.basketactive, #checkoutBreadcrumb li.detailsactive, #checkoutBreadcrumb li.deliveryactive, #checkoutBreadcrumb li.paymentactive, #checkoutBreadcrumb li.reviewactive, #checkoutBreadcrumb li.doneactive {
+    color: #ffffff;
+}
+
+.clearing {
+    clear: left;
+    height: 10px;
+}
+
+#basketDisplay .breadcrumb {
+    background: transparent url(../images/basket_breadcrumb.png) no-repeat 0 0;
+    width: 779px;
+    height: 41px;
+    text-indent: -999px;
+}

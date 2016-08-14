@@ -1,0 +1,123 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="/WEB-INF/jspf/taglib.jspf" %>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Leoshop</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="style/css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="style/css/form.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="style/css/cart-breadcrumbs.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="style/js/jquery1.min.js"></script>
+    <!-- start menu -->
+    <link href="style/css/megamenu.css" rel="stylesheet" type="text/css" media="all"/>
+    <script type="text/javascript" src="style/js/megamenu.js"></script>
+    <script>$(document).ready(function () {
+        $(".megamenu").megamenu();
+    });
+    </script>
+    <!--start slider -->
+    <link rel="stylesheet" href="style/css/fwslider.css" media="all">
+    <script src="style/js/jquery-ui.min.js"></script>
+    <script src="style/js/i18n.js"></script>
+    <script src="style/js/css3-mediaqueries.js"></script>
+    <script src="style/js/fwslider.js"></script>
+    <!--end slider -->
+    <script src="style/js/jquery.easydropdown.js"></script>
+    <script type="text/javascript" src="js/jquery.jscrollpane.min.js"></script>
+</head>
+<body>
+<p id="cyka" style="display:none">${pageContext.request.locale}</p>
+<noscript>
+    <div id="enablejs">Please enable js</div>
+</noscript>
+<div class="header-top">
+    <div class="wrap">
+        <div class="col_1_of_2 span_1_of_2">
+            <div class="float-lt">
+                <div class="cssmenu">
+                    <ul>
+                        <li><a href="cart.jsp">
+                            <fmt:message key='checkout'/>
+                        </a></li>
+                        |
+                        <c:if test="${sessionScope.user eq null || sessionScope.user eq '' }">
+                            <li><a href="register">
+                                <fmt:message key="signup"/>
+                            </a></li>
+                        </c:if>
+                    </ul>
+                </div>
+                <div class="cssmenu">
+                    <mytag:localeTag/>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="col_1_of_2 span_1_of_2">
+            <div class="cssmenu">
+                <mytag:userBarTag user="${user}"/>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<div class="header-bottom">
+    <div class="wrap">
+        <div class="header-bottom-left">
+            <div class="logo">
+                <a href="index.jsp"><img src="style/images/logo.png" alt=""/></a>
+            </div>
+            <div class="menu">
+                <ul class="megamenu skyblue">
+                    <li class="active grid"><a href="index.jsp">
+                        <fmt:message key="home"/>
+                    </a></li>
+                    <li><a class="color5" href="catalog">
+                        <fmt:message key="catalog"/>
+                    </a></li>
+                    <li><a class="color6" href="other.html">
+                        <fmt:message key="other"/>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom-right">
+            <div class="tag-list">
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li><a class="active-icon c1" href="#"> </a>
+                        <ul class="sub-icon1 list">
+                            <li><h3>sed diam nonummy</h3><a href=""></a></li>
+                            <li><p>Lorem ipsum dolor sit amet, consectetuer <a href="">adipiscing elit, sed diam</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li><a class="active-icon c2" href="#"> </a>
+                        <ul class="sub-icon1 list">
+                            <li><h3>No Products</h3><a href=""></a></li>
+                            <li><p>Lorem ipsum dolor sit amet, consectetuer <a href="">adipiscing elit, sed diam</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="last">
+                    <li><a href="cart.jsp" id="cart">
+                        <fmt:message key="cart"/>
+                        (
+                        <span id="cart_inner">
+                            <c:choose>
+                                <c:when test="${cart == null}">0</c:when>
+                                <c:otherwise>${cart.size()}</c:otherwise>
+                            </c:choose>
+                        </span> )
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

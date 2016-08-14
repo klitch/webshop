@@ -1,0 +1,15 @@
+<security>
+    <constraint>
+        <url-pattern>admin.jsp</url-pattern>
+        <role>admin</role>
+    </constraint>
+    <constraint>
+        <url-pattern>user.jsp</url-pattern>
+        <role>user</role>
+    </constraint>
+    <constraint>
+        <url-pattern>internal.jsp</url-pattern>
+        <role>user</role>
+        <role>admin</role>
+    </constraint>
+</security>

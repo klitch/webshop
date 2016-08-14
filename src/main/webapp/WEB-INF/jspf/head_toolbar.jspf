@@ -1,0 +1,83 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="/WEB-INF/jspf/taglib.jspf" %>
+<div class="mens-toolbar">
+    <div class="sort">
+        <div class="sort-by">
+            <label><fmt:message key="sortby" /></label>
+            <select name="sort" onchange="this.form.submit()">
+                <option disabled value="" selected="selected">Field</option>
+                <option value="producer"
+                        <c:if test="${filter.getSortBy() eq 'producer'}">selected</c:if>
+                        >
+                    Producer
+                </option>
+                <option value="price"
+                        <c:if test="${filter.getSortBy() eq 'price'}">selected</c:if>
+                        >
+                    Price
+                </option>
+            </select>
+            <label>
+                <input onchange="this.form.submit()" class="invisible"
+                       type="radio"
+                       name="sortDirection"
+                       value="ASC"
+                       <c:if test="${filter.getSortDirection() eq 'ASC'}">checked</c:if>
+                       onchange="document.getElementById('orderASC').style.display = 'none';
+                document.getElementById('orderDESC').style.display = 'inline'">
+
+                <img id="orderASC" src="style/images/arrow2.gif"
+                        <c:if test="${filter.getSortDirection() eq 'ASC'|| filter.getSortDirection() eq null}">
+                            style="display: none"
+                        </c:if>
+                     title="Order in ascending direction" class="sortArrow"/>
+            </label>
+            <label>
+                <input onchange="this.form.submit()" class="invisible"
+                       type="radio"
+                       name="sortDirection"
+                       value="DESC"
+                       <c:if test="${filter.getSortDirection() eq 'DESC'}">checked</c:if>
+                       onchange="document.getElementById('orderDESC').style.display = 'none';
+                document.getElementById('orderASC').style.display = 'inline'">
+
+                <img id="orderDESC" src="style/images/arrow2.gif"
+                        <c:if test="${filter.getSortDirection() eq 'DESC'}">
+                            style="display: none"
+                        </c:if>
+                     title="Order in descending direction"
+                     class="sortArrow"/>
+            </label>
+        </div>
+    </div>
+    <div class="pager">
+        <div class="limiter visible-desktop">
+            <label><fmt:message key="show" /></label>
+            <select name="perPage" onchange="this.form.submit()">
+                <option value="1"
+                        <c:if test="${filter.getPerPage() eq '1'}">selected</c:if>
+                        >
+                    1
+                </option>
+                <option value="9"
+                        <c:if test="${filter.getPerPage() eq '9'}">selected</c:if>
+                        >
+                    9
+                </option>
+                <option value="15"
+                        <c:if test="${filter.getPerPage() eq '15'}">selected</c:if>
+                        >
+                    15
+                </option>
+                <option value="30"
+                        <c:if test="${filter.getPerPage() eq '30'}">selected</c:if>
+                        >
+                    30
+                </option>
+            </select> <fmt:message key="perpage" />
+        </div>
+        <mytag:pagination/>
+        <div class="clear"></div>
+    </div>
+    <div class="clear"></div>
+</div>

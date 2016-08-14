@@ -1,0 +1,94 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="/WEB-INF/jspf/taglib.jspf" %>
+<%@ taglib prefix="my" uri="/WEB-INF/tld/functions.tld" %>
+<div class="rsidebar span_1_of_left" xmlns:c="http://www.w3.org/1999/XSL/Transform">
+    <section class="sky-form">
+        <h4><fmt:message key="search_model"/></h4>
+
+        <div class="row row2 scroll-pane">
+            <div class="col col-4">
+                <input class="model_search" name="model" placeholder="<fmt:message key="model"/>..." type="text"
+                       value="${filter.getModel()}"/>
+                <img
+                        class="search_icon" src="style/images/search.png"/>
+            </div>
+        </div>
+    </section>
+    <section class="sky-form">
+        <h4><fmt:message key="gender"/></h4>
+
+        <div class="row row2 scroll-pane">
+            <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="gender"
+                    <c:if test="${my:contains(filter.getGender(),'Men')}">checked</c:if>
+                    value="Men"><i></i><fmt:message key='men'/></label>
+                <label class="checkbox"><input type="checkbox" name="gender"
+                    <c:if test="${my:contains(filter.getGender(),'Women')}">checked</c:if> value="Women"
+                    ><i></i><fmt:message key='women'/></label>
+            </div>
+        </div>
+    </section>
+    <section class="sky-form">
+        <h4><fmt:message key="price"/></h4>
+
+        <div class="row row1 scroll-pane">
+            <div class="col col-4">
+                <label class="checkbox">
+                    <input type="checkbox" name="price" <c:if
+                        test="${my:contains(filter.getPrice(),'50-100')}">checked</c:if> value="50-100"><i></i>$50 -
+                    $100</label>
+                <label class="checkbox"><input type="checkbox" name="price" <c:if
+                        test="${my:contains(filter.getPrice(),'100-150')}">checked</c:if> value="100-150" ><i></i>$100
+                    - $150</label>
+                <label class="checkbox"><input type="checkbox" name="price" <c:if
+                        test="${my:contains(filter.getPrice(),'150-200')}">checked</c:if> value="150-200"><i></i>$150 -
+                    $200</label>
+                <label class="checkbox">
+                    <input type="checkbox" name="price" <c:if
+                        test="${my:contains(filter.getPrice(),'200-250')}">checked</c:if> value="200-250"><i></i>$200 -
+                    $250</label>
+                <label class="checkbox"><input type="checkbox" name="price" <c:if
+                        test="${my:contains(filter.getPrice(),'250-300')}">checked</c:if> value="250-300"><i></i>$250 -
+                    $300</label>
+                <label class="checkbox"><input type="checkbox" name="price" <c:if
+                        test="${my:contains(filter.getPrice(),'>300')}">checked</c:if> value=">300"><i></i>
+                    <fmt:message key="over" />
+                    $300</label>
+            </div>
+        </div>
+    </section>
+    <section class="sky-form">
+        <h4><fmt:message key="brand_name"/></h4>
+
+        <div class="row row1 scroll-pane">
+            <div class="col col-4">
+                <c:forEach items="${brands}" var="brand">
+                    <label class="checkbox"><input type="checkbox" name="brand" value="${brand}" <c:if
+                            test="${my:contains(filter.getBrand(), brand)}">checked</c:if>><i></i><c:out
+                            value="${brand}"/></label>
+                </c:forEach>
+            </div>
+        </div>
+    </section>
+    <section class="sky-form">
+        <h4><fmt:message key="frame_size"/></h4>
+
+        <div class="row row1 scroll-pane">
+            <div class="col col-4">
+                <label class="checkbox"><input type="checkbox" name="size" <c:if
+                        test="${my:contains(filter.getFrameSize(), 'Small')}">checked</c:if> value="Small"><i></i>Small</label>
+                <label class="checkbox"><input type="checkbox" name="size" <c:if
+                        test="${my:contains(filter.getFrameSize(), 'Medium')}">checked</c:if> value="Medium"><i></i>Medium</label>
+                <label class="checkbox"><input type="checkbox" name="size" <c:if
+                        test="${my:contains(filter.getFrameSize(), 'Large')}">checked</c:if> value="Large"><i></i>Large</label>
+                <label class="checkbox"><input type="checkbox" name="size" <c:if
+                        test="${my:contains(filter.getFrameSize(), 'ExtraLarge')}">checked</c:if>
+                    value="ExtraLarge"><i></i>Extra Large</label>
+            </div>
+        </div>
+    </section>
+    <input class="filter_submit float-lt" type="submit" value="<fmt:message key='submit' />"/><input
+        class="filter_submit float-lt" onclick="window.location = 'catalog'" type="button"
+        value="<fmt:message key='clear' />"/>
+</div>
+</form>
